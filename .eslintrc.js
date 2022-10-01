@@ -17,17 +17,15 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    es6: true,
-    'jest/globals': true
+    es6: true
   },
   root: true,
-  plugins: ['jest', 'react', 'module-resolver'],
+  plugins: ['react', 'module-resolver'],
   extends: [
     'universe/web',
     'universe/native',
     'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:jest/recommended',
     'plugin:react-hooks/recommended',
     'plugin:import/errors',
     'plugin:import/warnings'
