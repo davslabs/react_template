@@ -1,21 +1,52 @@
 {
   "name": "react_template",
   "version": "1.0.0",
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "./index.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "eslint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "prettier": "prettier \"*.js\" \"src/**/*.js\" --write",
+    "lint": "npm run prettier && npm run eslint"
   },
   "dependencies": {
     "expo": "~46.0.13",
     "expo-status-bar": "~1.4.0",
     "react": "18.0.0",
-    "react-native": "0.69.6"
+    "react-native": "0.69.6",
+    "react-native-web": "~0.18.7",
+    "react-dom": "18.0.0",
+    "@expo/webpack-config": "^0.17.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "@babel/eslint-parser": "^7.19.1",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "eslint": "^8.24.0",
+    "eslint-config-universe": "^11.1.0",
+    "eslint-import-resolver-babel-module": "^5.3.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^27.0.4",
+    "eslint-plugin-module-resolver": "^1.5.0",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "universe/web",
+      "universe/native"
+    ]
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   },
   "private": true
 }
